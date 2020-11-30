@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "Werfer": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:dispenser"
+      }
+    },
+    "Truhe": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:chest"
+      }
+    },
+    "Ofen": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:furnace"
+      }
+    },
+    "Shulkerkiste": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:shulker_box"
+      }
+    },
+    "Fass": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:barrel"
+      }
+    }
+  },
+  "requirements": [ ["Werfer", "Truhe", "Ofen", "Shulkerkiste", "Fass"] ]
+}

@@ -1,0 +1,379 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 2
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 3,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 3
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 4,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 4
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 5,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 5
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 6,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 6
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 7,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 7
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 8,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 8
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 9,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 9
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 10,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 10
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 11,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 11
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 12,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 12
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 13,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 13
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 14,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 14
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 15,
+      "functions": [
+        {
+          "function": "minecraft:set_count",
+          "count": 0
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
+          "conditions": [
+            {
+              "condition": "minecraft:location_check",
+              "predicate": {
+                "light": {
+                  "light": 15
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Es werden zwei Rüstungsständer erzeugt, wovon der erste ein grünes Quadar erzeugt und der zweite ein graues.
+summon minecraft:armor_stand ~5 ~-0.5 ~ {Small:true,Marker:true,Invisible:true,Tags:["EtiStaOS.4Alle","EtiStaOS.4Sensor","EtiStaOS.4Innen"],Rotation:[0.0f,0.0f]}
+summon minecraft:armor_stand ~5 ~-0.5 ~ {Small:true,Marker:true,Invisible:true,Tags:["EtiStaOS.4Alle","EtiStaOS.4Sensor","EtiStaOS.4Aussen"],Rotation:[0.0f,0.0f]}
+
+# Spielern wird in einem Umkreis von 15 Blöcken zwei Rüstungsständer gegeben. Ein grüner und ein grauer.
+give @a[distance=..15] minecraft:armor_stand{EigStaOS.4Alle:true,display:{Name:'{"text":"Grünes Quader","color":"green","bold":true}',Lore:['"Platziere den Rüstungsständer"','"um den Sensor zu aktivieren."','"Nur wenn der Spieler sich"','"innerhalb des Quaders befindet,"','"wird er erkannt."']},EntityTag:{Small:true,Marker:true,Invisible:true,Tags:["EtiStaOS.4Alle","EtiStaOS.4Sensor","EtiStaOS.4Innen"],Rotation:[0.0f,0.0f]} }
+give @a[distance=..15] minecraft:armor_stand{EigStaOS.4Alle:true,display:{Name:'{"text":"Graues Quader","color":"gray","bold":true}',Lore:['"Platziere den Rüstungsständer"','"um den Sensor zu aktivieren."','"Nur wenn der Spieler sich"','"außerhalb des Quaders befindet,"','"kann er erkannt werden."']},EntityTag:{Small:true,Marker:true,Invisible:true,Tags:["EtiStaOS.4Alle","EtiStaOS.4Sensor","EtiStaOS.4Aussen"],Rotation:[0.0f,0.0f]} }

@@ -1,0 +1,12 @@
+{
+  "criteria": {
+    "Biom": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "location": {
+          "biome": "minecraft:the_void"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"minecraft:dispenser",
+		"minecraft:chest",
+		"minecraft:furnace",
+		"minecraft:shulker_box",
+		"minecraft:barrel"
+	]
+}
