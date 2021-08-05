@@ -4,6 +4,9 @@ advancement revoke @a[advancements={dimensions-sensor:v2oberwelt=true}] only dim
 advancement revoke @a[advancements={dimensions-sensor:v2nether=true}] only dimensions-sensor:v2nether
 advancement revoke @a[advancements={dimensions-sensor:v2dimension_geaendert=true}] only dimensions-sensor:v2dimension_geaendert
 
+# Ein eventuell vorhandenes Etikett wird entfernt.
+tag @a[tag=EtiDimS.2Auswahl] remove EtiDimS.2Auswahl
+
 # Der Stock wird wieder entfernt.
 clear @a minecraft:stick{EigDimS.2Alle:true}
 

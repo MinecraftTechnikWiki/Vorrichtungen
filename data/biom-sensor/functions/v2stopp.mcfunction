@@ -1,3 +1,6 @@
+
+tag @a[tag=EtiBiomS.2Auswahl] remove EtiBiomS.2Auswahl
+
 # Der Stock wird aus dem Inventar aller Spieler entfernt.
 clear @a minecraft:stick{EigBiomS.2Alle:true}
 

@@ -1,3 +1,6 @@
+# Das noch vorhandene Etikett wird entfernt.
+tag @a[tag=EtiDimS.3Auswahl] remove EtiDimS.3Auswahl
+
 # Der Stock wird wieder entfernt.
 clear @a minecraft:stick{EigDimS.3Alle:true}
 
