@@ -17,7 +17,7 @@ clear @a minecraft:zoglin_spawn_egg{EigObjZae.4Alle:true}
 clear @a minecraft:piglin_brute_spawn_egg{EigObjZae.4Alle:true}
 
 # Das Schild an der Position der Partikelwolke wird entfernt.
-execute at @e[tag=EtiObjZae.4Schild] run setblock ~ ~ ~ minecraft:air replace
+execute at @e[type=minecraft:marker,tag=EtiObjZae.4Schild] run setblock ~ ~ ~ minecraft:air replace
 
 # Falls manche Kreaturen beim erzeugen mit einem Spoawn-Ei Reiter mitgeliefert haben, werden diese in die Leere teleportiert.
 execute as @e[tag=EtiObjZae.4Alle,nbt={Passengers:[{}]}] at @s run teleport @s ~ -256 ~

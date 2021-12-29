@@ -16,5 +16,5 @@ give @a[distance=..25] minecraft:zoglin_spawn_egg{EigObjZae.4Alle:true,display:{
 give @a[distance=..25] minecraft:piglin_brute_spawn_egg{EigObjZae.4Alle:true,display:{Lore:['"Eine Kreatur zum"','"aufzählen"'] },EntityTag:{IsImmuneToZombification:true,Tags:["EtiObjZae.4Alle"],DeathLootTable:"minecraft:empty"} }
 
 # Um die Namen der Kreaturen anzuzeigen, wird ein Schild benötigt. Dieses wird an der Position der erzeugten Partikelwolke platziert.
-summon minecraft:area_effect_cloud ~ ~1 ~ {Duration:-1,Age:-2147483648,WaitTime:-2147483648,Particle:"minecraft:block minecraft:air",Tags:["EtiObjZae.4Alle","EtiObjZae.4Schild"]}
-execute at @e[tag=EtiObjZae.4Schild] run setblock ~ ~ ~ minecraft:oak_sign[rotation=12] replace
+summon minecraft:marker ~ ~1 ~ {Tags:["EtiObjZae.4Alle","EtiObjZae.4Schild"]}
+execute at @e[type=minecraft:marker,tag=EtiObjZae.4Schild] run setblock ~ ~ ~ minecraft:oak_sign[rotation=12] replace

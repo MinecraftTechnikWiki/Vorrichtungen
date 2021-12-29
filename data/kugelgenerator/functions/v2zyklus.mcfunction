@@ -1,12 +1,15 @@
-# Spieler die auf den Auslöser geklickt haben, sorgen dafür, dass die Größen-Variable den Wert vom Spieler übertragen bekommen. Vorausgesetzt es wird keine Kugel in gleichen Augenblick erzeugt.
-execute unless entity @e[type=minecraft:armor_stand,tag=EtiKugelG.2KugelErzeugen] as @a[distance=..150,scores={PZKugelG.2Hor=3..5}] run scoreboard players operation VarKugelG.2Groesse PZKugelG.2Hor = @s PZKugelG.2Hor
 
-# Spieler die auf den Auslöser geklickt haben oder noch nie ihn angeklickt haben, erhalten eine Chat-Nachricht in der sie die drei Größen der Kugel festelegen können, die sie mit dem Platzieren des Rüstungsständers erzeugen.
-execute if score VarKugelG.2Groesse PZKugelG.2Hor matches 0.. as @a[distance=..150] unless entity @s[scores={PZKugelG.2Hor=0}] run tellraw @s ["Kugelgenerator.2: ",{"text":"\ngröße = ","bold":true},{"text":"3","color":"gray","underlined":true,"bold":true,"hoverEvent":{"action":"show_text","value":{"text":"Tippe für den Wert"} },"clickEvent":{"action":"run_command","value":"/trigger PZKugelG.2Hor set 3"} },{"text":"\ngröße = ","bold":true},{"text":"4","color":"gray","underlined":true,"bold":true,"hoverEvent":{"action":"show_text","value":{"text":"Tippe für den Wert"} },"clickEvent":{"action":"run_command","value":"/trigger PZKugelG.2Hor set 4"} },{"text":"\ngröße = ","bold":true},{"text":"5","color":"gray","underlined":true,"bold":true,"hoverEvent":{"action":"show_text","value":{"text":"Tippe für den Wert"} },"clickEvent":{"action":"run_command","value":"/trigger PZKugelG.2Hor set 5"} },{"text":"\ngröße == ","bold":true},{"score":{"name":"VarKugelG.2Groesse","objective":"PZKugelG.2Hor"},"color":"dark_purple","bold":true}]
+tag @a[nbt={SelectedItem:{tag:{EigKugelG.2Ausloeser:true} } }] add EtiKugelG.2Ausgewaehlt
 
-# Anschließend erhalten die Spieler wieder die Möglichkeit auf den Auslöser zu klicken und ihr Punktestand wird auf null gesetzt.
-execute as @a[distance=..150] unless entity @s[scores={PZKugelG.2Hor=0}] run scoreboard players enable @s PZKugelG.2Hor
-execute as @a[distance=..150] unless entity @s[scores={PZKugelG.2Hor=0}] run scoreboard players set @s PZKugelG.2Hor 0
+scoreboard players set @a[tag=EtiKugelG.2Ausgewaehlt,tag=!EtiKugelG.2Auswahl] PZKugelG.2Hor -99
+
+execute as @a[tag=EtiKugelG.2Ausgewaehlt] unless entity @s[scores={PZKugelG.2Hor=0}] run function kugelgenerator:v2ausloeser
+
+tag @a[tag=EtiKugelG.2Ausgewaehlt,tag=!EtiKugelG.2Auswahl] add EtiKugelG.2Auswahl
+tag @a[tag=!EtiKugelG.2Ausgewaehlt,tag=EtiKugelG.2Auswahl] remove EtiKugelG.2Auswahl
+
+tag @a[tag=EtiKugelG.2Ausgewaehlt] remove EtiKugelG.2Ausgewaehlt
+
 
 # Wenn gerade keine Kugel erzeugt wird, kann eine Kugel generiert werden. Dazu wird vom Erstellen-Rüstungsständer die Erstellen-Funktion aufgerufen.
 execute unless entity @e[type=minecraft:armor_stand,tag=EtiKugelG.2KugelErzeugen,scores={PZKugelG.2Hor=0..}] as @e[type=minecraft:armor_stand,tag=EtiKugelG.2Erstellen] at @s run function kugelgenerator:v2erstellen

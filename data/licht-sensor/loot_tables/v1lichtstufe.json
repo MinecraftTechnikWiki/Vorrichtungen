@@ -2,16 +2,10 @@
   "pools": [
     {
       "rolls": 1,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -27,16 +21,10 @@
     },
     {
       "rolls": 2,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -52,16 +40,10 @@
     },
     {
       "rolls": 3,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -77,16 +59,10 @@
     },
     {
       "rolls": 4,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -102,16 +78,10 @@
     },
     {
       "rolls": 5,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -127,16 +97,10 @@
     },
     {
       "rolls": 6,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -152,16 +116,10 @@
     },
     {
       "rolls": 7,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -177,16 +135,10 @@
     },
     {
       "rolls": 8,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -202,16 +154,10 @@
     },
     {
       "rolls": 9,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -227,16 +173,10 @@
     },
     {
       "rolls": 10,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -252,16 +192,10 @@
     },
     {
       "rolls": 11,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -277,16 +211,10 @@
     },
     {
       "rolls": 12,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -302,16 +230,10 @@
     },
     {
       "rolls": 13,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -327,16 +249,10 @@
     },
     {
       "rolls": 14,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",
@@ -352,16 +268,10 @@
     },
     {
       "rolls": 15,
-      "functions": [
-        {
-          "function": "minecraft:set_count",
-          "count": 0
-        }
-      ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:stone",
+          "name": "minecraft:air",
           "conditions": [
             {
               "condition": "minecraft:location_check",

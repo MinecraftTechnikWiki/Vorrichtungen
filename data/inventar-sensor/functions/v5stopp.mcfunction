@@ -19,7 +19,7 @@ tag @a[tag=EtiInvS.5Block] remove EtiInvS.5Block
 advancement revoke @a[advancements={inventar-sensor:v5bloecke_platzieren=true}] only inventar-sensor:v5bloecke_platzieren
 
 # Alle Behälter die noch an der Position der Partikelwolken sind, werden entfernt.
-execute at @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] if block ~ ~ ~ #inventar-sensor:v5behaelter run setblock ~ ~ ~ minecraft:air replace
+execute at @e[type=minecraft:marker,tag=EtiInvS.5Inventar] if block ~ ~ ~ #inventar-sensor:v5behaelter run setblock ~ ~ ~ minecraft:air replace
 
 # Herumliegende Drops und alle anderen Objekte für den Sensor werden entfernt.
 tag @e[type=minecraft:item,nbt={Item:{tag:{EigInvS.5Alle:true} } }] add EtiInvS.5Alle

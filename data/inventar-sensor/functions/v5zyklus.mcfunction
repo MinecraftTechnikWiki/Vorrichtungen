@@ -18,7 +18,7 @@ execute as @a[tag=EtiInvS.5Block] at @s anchored eyes positioned ^ ^ ^0.5 run fu
 advancement revoke @a[advancements={inventar-sensor:v5bloecke_platzieren=true}] only inventar-sensor:v5bloecke_platzieren
 
 # Falls eine Partikelwolke ohne Behälter exisitert, wird sie entfernt.
-execute as @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] at @s unless block ~ ~ ~ #inventar-sensor:v5behaelter run kill @s
+execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] at @s unless block ~ ~ ~ #inventar-sensor:v5behaelter run kill @s
 
 # Falls Spieler das Inventar geöffnet haben, wird ihnen der Wert wieder auf null gesetzt.
 scoreboard players set @a[tag=EtiInvS.5Block] PZInvS.5Werfer 0
@@ -31,10 +31,10 @@ scoreboard players set @a[tag=EtiInvS.5Block] PZInvS.5Fass 0
 tag @a[tag=EtiInvS.5Block] remove EtiInvS.5Block
 
 # Zwei Punkte-Ziele werden weiter verwendet um auch die Slot-Anzahl der Behälter zu speichern. Hierbei wird der alte Wert zwischengespeichert und anschließend wird die aktuelle Slot-Anzahl ausgelesen und gespeichert.
-execute as @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] run scoreboard players operation @s PZInvS.5Werfer = @s PZInvS.5Truhe
-execute as @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] at @s store result score @s PZInvS.5Truhe run data get block ~ ~ ~ Items
+execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] run scoreboard players operation @s PZInvS.5Werfer = @s PZInvS.5Truhe
+execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] at @s store result score @s PZInvS.5Truhe run data get block ~ ~ ~ Items
 
 # Wenn der alte Wert und der neue nicht übereinstimmen, wird eine Nachricht an die Spieler ausgegeben. Abhängig ob was dazu gelegt wurde oder etwas entnommen wurder, wird auch das an den Spieler per Nachricht übertragen.
-execute as @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] unless score @s PZInvS.5Werfer = @s PZInvS.5Truhe at @s run tellraw @a[distance=..4] ["Inventar-Sensor.5:\n",{"text":"Inventar geändert() == ","color":"gray","bold":true},{"text":"wahr","color":"green","bold":true}]
-execute as @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] if score @s PZInvS.5Werfer < @s PZInvS.5Truhe at @s run tellraw @a[distance=..4] ["",{"text":"Gegenstände aufgefüllt == ","color":"gray","bold":true},{"text":"wahr","color":"green","bold":true}]
-execute as @e[type=minecraft:area_effect_cloud,tag=EtiInvS.5Inventar] if score @s PZInvS.5Werfer > @s PZInvS.5Truhe at @s run tellraw @a[distance=..4] ["",{"text":"Gegenstände aufgefüllt == ","color":"gray","bold":true},{"text":"falsch","color":"red","bold":true}]
+execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] unless score @s PZInvS.5Werfer = @s PZInvS.5Truhe at @s run tellraw @a[distance=..4] ["Inventar-Sensor.5:\n",{"text":"Inventar geändert() == ","color":"gray","bold":true},{"text":"wahr","color":"green","bold":true}]
+execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] if score @s PZInvS.5Werfer < @s PZInvS.5Truhe at @s run tellraw @a[distance=..4] ["",{"text":"Gegenstände aufgefüllt == ","color":"gray","bold":true},{"text":"wahr","color":"green","bold":true}]
+execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] if score @s PZInvS.5Werfer > @s PZInvS.5Truhe at @s run tellraw @a[distance=..4] ["",{"text":"Gegenstände aufgefüllt == ","color":"gray","bold":true},{"text":"falsch","color":"red","bold":true}]
