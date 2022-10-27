@@ -17,13 +17,13 @@ execute as @e[type=minecraft:armor_stand,tag=EtiKugelG.3Erstellen] at @s run fun
 execute at @e[type=armor_stand,tag=EtiKugelG.3Mittelpunkt] run particle minecraft:flame ~ ~1 ~ 0.3 0.3 0.3 0 10
 
 # Horizontal soll sich der Rüstungsständer genau 360 mal um die eigene Achse drehen um die Blöcke der Kugel zu platzieren. Anschließend wird durch ihm die Kugel-Funktion geladen.
-scoreboard players set @e[type=armor_stand,tag=EtiKugelG.3KugelErzeugen] PZKugelG.3Hor 360
-execute as @e[type=armor_stand,tag=EtiKugelG.3KugelErzeugen] at @s run function kugelgenerator:v3kugel
+scoreboard players set @e[type=armor_stand,tag=EtiKugelG.3Generieren] PZKugelG.3Hor 360
+execute as @e[type=armor_stand,tag=EtiKugelG.3Generieren] at @s run function kugelgenerator:v3kugel
 
 # Vertikal kann der Rüstungsständer sich maximal 180 Grad nach unten neigen, deshalb wird sein Wert um eins erhöht und er selbst wird geneigt.
-scoreboard players add @e[type=armor_stand,tag=EtiKugelG.3KugelErzeugen] PZKugelG.3Vert 1
-execute as @e[type=armor_stand,tag=EtiKugelG.3KugelErzeugen] at @s run teleport @s ~ ~ ~ ~ ~1
+scoreboard players add @e[type=armor_stand,tag=EtiKugelG.3Generieren] PZKugelG.3Vert 1
+execute as @e[type=armor_stand,tag=EtiKugelG.3Generieren] at @s run teleport @s ~ ~ ~ ~ ~1
 
 # Wenn der Rüstungsständer die maximale Neigung von 180 Grad erreicht hat, wird die Nachricht ausgegeben und er verliert das Etikett.
-execute at @e[type=armor_stand,tag=EtiKugelG.3KugelErzeugen,scores={PZKugelG.3Vert=180..}] run tellraw @a[distance=..50] ["Kugelgenerator.3: ",{"text":"Kugel generiert","bold":true}]
-tag @e[type=armor_stand,tag=EtiKugelG.3KugelErzeugen,scores={PZKugelG.3Vert=180..}] remove EtiKugelG.3KugelErzeugen
+execute at @e[type=armor_stand,tag=EtiKugelG.3Generieren,scores={PZKugelG.3Vert=180..}] run tellraw @a[distance=..50] ["Kugelgenerator.3:\n",{"text":"Kugel generiert","color":"gold","bold":true}]
+tag @e[type=armor_stand,tag=EtiKugelG.3Generieren,scores={PZKugelG.3Vert=180..}] remove EtiKugelG.3Generieren
