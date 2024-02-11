@@ -1,13 +1,13 @@
 # Wenn der Spieler den Kompass ausgewählt hat, erhält er zur Erkennung ein Etikett.
 tag @a[nbt={SelectedItem:{tag:{EigSichtWS.1Sensor:true} } }] add EtiSichtWS.1Ausgewaehlt
 
-# Jeden Tick wird der Wert der Spieler um eins erhöht und bei Erreichen des Wertes von 20 wird dieser wieder auf null gesetzt.
-scoreboard players add @a[scores={PZSichtWS.1Zeit=0..}] PZSichtWS.1Zeit 1
-tag @a[tag=EtiSichtWS.1Ausgewaehlt,tag=EtiSichtWS.1Auswahl,scores={PZSichtWS.1Zeit=20..}] remove EtiSichtWS.1Auswahl
-scoreboard players set @a[tag=EtiSichtWS.1Ausgewaehlt,tag=!EtiSichtWS.1Auswahl] PZSichtWS.1Zeit 0
+# Die Tick-Variable wird hochgezählt und bei einer Sekunde wird sie wieder auf null gesetzt. Dabei wird dem Spieler jedesmal der wert auch auf null gesetzt, damit dieser in der aufrufenden Sensor-Funktion benutzt werden kann.
+execute if score VarSichtWS.1Tick PZSichtWS.1Wert matches ..19 run scoreboard players add VarSichtWS.1Tick PZSichtWS.1Wert 1
+execute if score VarSichtWS.1Tick PZSichtWS.1Wert matches 20.. run tag @a[tag=EtiSichtWS.1Ausgewaehlt,tag=EtiSichtWS.1Auswahl] remove EtiSichtWS.1Auswahl
+execute as @a[tag=EtiSichtWS.1Ausgewaehlt,tag=!EtiSichtWS.1Auswahl] store result score @s PZSichtWS.1Wert run scoreboard players set VarSichtWS.1Tick PZSichtWS.1Wert 0
 
-# Spieler die das Etikett besitzen und den Wert null besitzen, laden von ihrer Position aus die Sensor-Funktion.
-execute as @a[tag=EtiSichtWS.1Ausgewaehlt,scores={PZSichtWS.1Zeit=0}] at @s run function sichtweiten-sensor:v1sensor
+# Wenn die Tick-Variable auf null ist und die Spieler den Kompass ausgewählt haben, wird die Sensor-Funktion aufgerufen.
+execute if score VarSichtWS.1Tick PZSichtWS.1Wert matches 0 as @a[tag=EtiSichtWS.1Ausgewaehlt] at @s rotated 0 0 run function sichtweiten-sensor:v1sensor
 
 # Die Sichtweite wird mit Hilfe des Wertes des Spielers angezeigt.
 execute as @a[tag=EtiSichtWS.1Ausgewaehlt] run title @s actionbar ["",{"text":"Sichtweite == ","color":"gray","bold":true},{"score":{"name":"@s","objective":"PZSichtWS.1Wert"},"color":"dark_purple","bold":true}]

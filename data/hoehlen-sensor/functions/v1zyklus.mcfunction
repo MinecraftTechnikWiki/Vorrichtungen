@@ -1,17 +1,17 @@
 # Wenn der Spieler den Stock ausgewählt hat, erhält er zur Erkennung ein Etikett.
 tag @a[nbt={SelectedItem:{tag:{EigHoehlS.1Sensor:true} } }] add EtiHoehlS.1Ausgewaehlt
 
-# Jeden Tick wird der Wert der Spieler um eins erhöht und bei Erreichen des Wertes von 20 wird dieser wieder auf null gesetzt.
-scoreboard players add @a[scores={PZHoehlS.1Wert=0..}] PZHoehlS.1Wert 1
-tag @a[tag=EtiHoehlS.1Ausgewaehlt,tag=EtiHoehlS.1Auswahl,scores={PZHoehlS.1Wert=20..}] remove EtiHoehlS.1Auswahl
-scoreboard players set @a[tag=EtiHoehlS.1Ausgewaehlt,tag=!EtiHoehlS.1Auswahl] PZHoehlS.1Wert 0
+# Jede Sekunde wird bei allen Spielern der Punktestand wieder auf null gesetzt, ebenso die Tick-Variable.
+execute if score VarHoehlS.1Tick PZHoehlS.1Wert matches ..19 run scoreboard players add VarHoehlS.1Tick PZHoehlS.1Wert 1
+execute if score VarHoehlS.1Tick PZHoehlS.1Wert matches 20.. run tag @a[tag=EtiHoehlS.1Ausgewaehlt,tag=EtiHoehlS.1Auswahl] remove EtiHoehlS.1Auswahl
+execute as @a[tag=EtiHoehlS.1Ausgewaehlt,tag=!EtiHoehlS.1Auswahl] store result score @s PZHoehlS.1Wert run scoreboard players set VarHoehlS.1Tick PZHoehlS.1Wert 0
 
-# Wenn der Spieler den stock ausgewählt hat und gerade den Wert null besitzt, wird die Sensor-Funktion geladen.
-execute as @a[tag=EtiHoehlS.1Ausgewaehlt,scores={PZHoehlS.1Wert=0}] at @s align xz run function hoehlen-sensor:v1sensor
+# Jede Sekunde wird geprüft ob der Spieler den Stock ausgewählt hat, nur dann wird die Sensor-Funktion geladen.
+execute if score VarHoehlS.1Tick PZHoehlS.1Wert matches 0 as @a[tag=EtiHoehlS.1Ausgewaehlt] at @s run function hoehlen-sensor:v1sensor
 
-# Abhängig davon ob der Spieler das Höhlen-Etikett besitzt, erhält die entsprechende Nachricht mit Wahrheitswert.
-execute as @a[tag=EtiHoehlS.1Ausgewaehlt,tag=EtiHoehlS.1Hoehle] run title @s actionbar ["",{"text":"höhle == ","bold":true},{"text":"wahr","color":"green","bold":true}]
-execute as @a[tag=EtiHoehlS.1Ausgewaehlt,tag=!EtiHoehlS.1Hoehle] run title @s actionbar ["",{"text":"höhle == ","bold":true},{"text":"falsch","color":"red","bold":true}]
+# Abhängig davon ob der Spieler sich an der Oberfläche oder in einer Höhle befindet, erhält die entsprechende Meldung mit Wahrheitswert und Delta-Y.
+execute as @a[tag=EtiHoehlS.1Ausgewaehlt,scores={PZHoehlS.1Wert=1..}] run title @s actionbar ["",{"text":"Höhle == ","bold":true},{"text":"wahr","color":"green","bold":true}," ",{"text":"Delta-Y == ","bold":true},{"score":{"name":"@s","objective":"PZHoehlS.1Wert"},"color":"blue","bold":true}]
+execute as @a[tag=EtiHoehlS.1Ausgewaehlt,scores={PZHoehlS.1Wert=..0}] run title @s actionbar ["",{"text":"Höhle == ","bold":true},{"text":"falsch","color":"red","bold":true}," ",{"text":"Delta-Y == ","bold":true},{"score":{"name":"@s","objective":"PZHoehlS.1Wert"},"color":"blue","bold":true}]
 
 # Wenn der Stock nicht mehr ausgewählt wird, wird die Nachricht über der Schnellleiste geleert.
 title @a[tag=!EtiHoehlS.1Ausgewaehlt,tag=EtiHoehlS.1Auswahl] actionbar [""]
