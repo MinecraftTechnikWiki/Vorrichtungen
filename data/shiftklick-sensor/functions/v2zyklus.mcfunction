@@ -1,5 +1,5 @@
 # Wenn der Spieler den Stock ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigShklS.2Sensor:true} } }] add EtiShklS.2Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigShklS.2Sensor:true}] run tag @s add EtiShklS.2Ausgewaehlt
 
 # Spieler die das Etikett besitzen, erhalten eine Schnellleisten-Nachricht, die ausgibt ob man Shift gedrückt hält oder nicht.
 title @a[tag=EtiShklS.2Ausgewaehlt,predicate=shiftklick-sensor:v2shift] actionbar ["",{"text":"Shift halten == ","bold":true},{"text":"wahr","color":"green","bold":true}]

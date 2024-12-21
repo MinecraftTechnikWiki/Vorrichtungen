@@ -5,7 +5,7 @@ execute store result score VarChunkS.1Z PZChunkS.1Wert store result score VarChu
 # Ein Markierer wird erzeugt, um später die Ecke des Chunks zu markieren.
 summon minecraft:marker ~ ~ ~ {Tags:["EtiChunkS.1Alle","EtiChunkS.1Sensor"]}
 
-# Um die Chunk-Koordinaten zu erhalten, werden die Koordinaten durch 16 ganzahlig geteilt und anschließend werden die beiden Werte in die Positionswerte des Markierers gespeichert. Dabei werden die Werte mal 16 genommen.
+# Um die Chunk-Koordinaten zu erhalten, werden die Koordinaten durch 16 ganzzahlig geteilt und anschließend werden die beiden Werte in die Positionswerte des Markierers gespeichert. Dabei werden die Werte mal 16 genommen.
 execute store result entity @e[type=minecraft:marker,tag=EtiChunkS.1Sensor,sort=nearest,limit=1] Pos[0] double 16 run scoreboard players operation VarChunkS.1X PZChunkS.1Wert /= KonstChunkS.1Chunk PZChunkS.1Wert
 execute store result entity @e[type=minecraft:marker,tag=EtiChunkS.1Sensor,sort=nearest,limit=1] Pos[2] double 16 run scoreboard players operation VarChunkS.1Z PZChunkS.1Wert /= KonstChunkS.1Chunk PZChunkS.1Wert
 

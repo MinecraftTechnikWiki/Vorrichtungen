@@ -1,5 +1,5 @@
 # Wenn der Spieler den Stock ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigShklS.1Sensor:true} } }] add EtiShklS.1Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigShklS.1Sensor:true}] run tag @s add EtiShklS.1Ausgewaehlt
 
 # Da Spieler nicht von Anfang einen Wert besitzen wird ihnen der Wert auf null addiert, sodass sie einen besitzen und solche die vorher schon einen Wert besaßen, dieser sich nicht ändert.
 scoreboard players add @a[tag=EtiShklS.1Ausgewaehlt,tag=!EtiShklS.1Auswahl] PZShklS.1Shift 0

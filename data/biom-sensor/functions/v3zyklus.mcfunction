@@ -1,5 +1,5 @@
 # Alle Spieler die den Stock auswählen erhalten ein temporäres Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigBiomS.3Sensor:true} } }] add EtiBiomS.3Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigBiomS.3Sensor:true}] run tag @s add EtiBiomS.3Ausgewaehlt
 
 # Wenn der Spieler in dem Biom die Leere sich befindet und den Stock ausgewählt hat, wird ihm die Schnellleisten-Nachricht angegeben.
 title @a[tag=EtiBiomS.3Ausgewaehlt,predicate=biom-sensor:v3biom_leere] actionbar ["",{"text":"Biom == ","color":"gray","bold":true},{"text":"Die Leere","color":"blue","bold":true}]

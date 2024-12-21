@@ -5,10 +5,10 @@ scoreboard objectives remove PZHoehlS.1Wert
 tag @a[tag=EtiHoehlS.1Auswahl] remove EtiHoehlS.1Auswahl
 
 # Der Stock wird aus dem Inventar entfernt.
-clear @a minecraft:stick{EigHoehlS.1Alle:true}
+clear @a minecraft:stick[minecraft:custom_data~{EigHoehlS.1Alle:true}]
 
 # Falls der Stock auf dem Boden geworfen wurde, wird der Drop entfernt.
-kill @e[type=minecraft:item,nbt={Item:{tag:{EigHoehlS.1Alle:true} } }]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigHoehlS.1Alle:true}] run kill @s
 
 # Der aktive Chunk wird wieder entladen.
 forceload remove ~ ~

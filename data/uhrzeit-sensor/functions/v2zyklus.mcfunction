@@ -1,5 +1,5 @@
 # Wenn der Spieler den Stock ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigUhrzeitS.2Sensor:true} } }] add EtiUhrzeitS.2Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigUhrzeitS.2Sensor:true}] run tag @s add EtiUhrzeitS.2Ausgewaehlt
 
 # Spieler die das Etikett besitzen, erhalten über der Schnellleiste die Uhrzeit.
 title @a[tag=EtiUhrzeitS.2Ausgewaehlt] actionbar ["",{"text":"H:M:S == ","color":"gray","bold":true},{"storage":"uhrzeit-sensor:v2daten","nbt":"\"EigUhrzeitS.2Zeit\"[0]","color":"red","bold":true},{"text":":","color":"gray","bold":true},{"storage":"uhrzeit-sensor:v2daten","nbt":"\"EigUhrzeitS.2Zeit\"[1]","color":"dark_green","bold":true},{"text":":","color":"gray","bold":true},{"storage":"uhrzeit-sensor:v2daten","nbt":"\"EigUhrzeitS.2Zeit\"[2]","color":"blue","bold":true}]

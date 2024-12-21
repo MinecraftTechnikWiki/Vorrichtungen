@@ -1,5 +1,5 @@
 # Wenn Spieler den Stock ausgewählt haben, erhalten sie ein Etikett dafür.
-tag @a[nbt={SelectedItem:{tag:{EigObjZae.2Sensor:true} } }] add EtiObjZae.2Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigObjZae.2Sensor:true}] run tag @s add EtiObjZae.2Ausgewaehlt
 
 # Nur wenn man das Etikett gerade ausgewählt hat, wird einem der Auslöser-Wert auf -99 gesetzt, damit die Funktion aufgerufen wird.
 scoreboard players set @a[tag=EtiObjZae.2Ausgewaehlt,tag=!EtiObjZae.2Auswahl] PZObjZae.2Ausl -99
@@ -32,7 +32,7 @@ execute unless score VarObjZae.2Max PZObjZae.2Ausl matches 0 if score VarObjZae.
 
 # Wenn die Anzahl der Piglins kleiner ist, als die eingestellte Mindest-Anzahl, so wird jeden Tick an einem zufälligen Spieler ein neuer Piglin erzeugt.
 execute if score VarObjZae.2Anzahl PZObjZae.2Ausl < VarObjZae.2Min PZObjZae.2Ausl run tellraw @a[tag=EtiObjZae.2Ausgewaehlt] ["Objekt-Zähler.2:\n",{"text":"(anzahl < min) == ","color":"gray","bold":true},{"text":"wahr","color":"green","bold":true} ]
-execute if score VarObjZae.2Anzahl PZObjZae.2Ausl < VarObjZae.2Min PZObjZae.2Ausl at @r[tag=EtiObjZae.2Ausgewaehlt] run summon minecraft:piglin ~ ~ ~ {IsImmuneToZombification:true,Tags:["EtiObjZae.2Alle","EtiObjZae.2Objekt"],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b} ] }
+execute if score VarObjZae.2Anzahl PZObjZae.2Ausl < VarObjZae.2Min PZObjZae.2Ausl at @r[tag=EtiObjZae.2Ausgewaehlt] run summon minecraft:piglin ~ ~ ~ {IsImmuneToZombification:true,Tags:["EtiObjZae.2Alle","EtiObjZae.2Objekt"],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",count:1} ] }
 
 # Damit die Spieler nur dann das Etikett besitzen, wenn sie den Stock ausgewählt haben, wird ihnen das Etikett entfernt.
 tag @a[tag=EtiObjZae.2Ausgewaehlt] remove EtiObjZae.2Ausgewaehlt

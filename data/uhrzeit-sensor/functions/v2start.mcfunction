@@ -5,12 +5,12 @@ scoreboard objectives add PZUhrzeitS.2Wert dummy ["Uhrzeit-Sensor.2: ",{"text":"
 scoreboard players set KonstUhrzeitS.2ZEHN PZUhrzeitS.2Wert 10
 
 # Datenspeicher wird mit drei Eigenschaften angelegt.
-data merge storage uhrzeit-sensor:v2daten {EigUhrzeitS.2Ziffer:"",EigUhrzeitS.2Uhrzeit:"",EigUhrzeitS.2Zeit:[]}
+data merge storage uhrzeit-sensor:v2daten {EigUhrzeitS.2Uhrzeit:"",EigUhrzeitS.2Zeit:["00","00","00"]}
 
 # Den Spielern im Umkreis von 15 Blöcken wird ein Stock gegeben, mit dem sie sich die Uhrzeit anzeigen können.
-give @a[distance=..15] minecraft:stick{EigUhrzeitS.2Alle:true,EigUhrzeitS.2Sensor:true,Enchantments:[{id:-1}],display:{Name:'{"text":"Uhrzeit-Sensor","color":"dark_purple","bold":true}',Lore:['"Wähle den Stock aus"','"um die Uhrzeit"','"anzuzeigen zu lassen."'] } }
+give @a[distance=..15] minecraft:stick[minecraft:lore=['"Wähle den Stock aus"','"um die Uhrzeit"','"anzuzeigen zu lassen."'],minecraft:custom_name='{"text":"Uhrzeit-Sensor","color":"dark_purple","bold":true}',minecraft:custom_data={EigUhrzeitS.2Alle:true,EigUhrzeitS.2Sensor:true},minecraft:enchantment_glint_override=true]
 
-# Markierer, der an der Position des Widerhol-Befehlsblock erzeugt wird.
+# Markierer, der an der Position des Wiederhol-Befehlsblock erzeugt wird.
 summon minecraft:marker ~ ~ ~-1 {Tags:["EtiUhrzeitS.2Alle","EtiUhrzeitS.2Sensor"]}
 
 # Der Chunk wird aktiv gehalten, damit der Sensor auch weit ab noch funktioniert.

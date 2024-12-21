@@ -2,10 +2,7 @@
 scoreboard objectives remove PZSlotS.3Slot
 
 # Die Gegenstände mit der speziellen Eigenschaft werden gelöscht.
-clear @a minecraft:observer{EigSlotS.3Alle:true}
-clear @a minecraft:redstone{EigSlotS.3Alle:true}
-clear @a minecraft:glass{EigSlotS.3Alle:true}
-clear @a minecraft:quartz_slab{EigSlotS.3Alle:true}
+clear @a *[minecraft:custom_data~{EigSlotS.3Alle:true}]
 
 # Falls die Gegenstände gedroppt wurden, werden sie ebenfalls gelöscht.
-kill @e[type=minecraft:item,nbt={Item:{tag:{EigSlotS.3Alle:true} } }]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigSlotS.3Alle:true}] run kill @s

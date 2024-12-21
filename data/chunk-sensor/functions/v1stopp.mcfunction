@@ -5,10 +5,10 @@ scoreboard objectives remove PZChunkS.1Wert
 tag @a[tag=EtiChunkS.1Auswahl] remove EtiChunkS.1Auswahl
 
 # Der Kompass wird aus dem Inventar entfernt.
-clear @a minecraft:compass{EigChunkS.1Alle:true}
+clear @a minecraft:compass[minecraft:custom_data~{EigChunkS.1Alle:true}]
 
 # Falls der Kompass auf dem Boden geworfen wurde, wird der Drop entfernt.
-kill @e[type=minecraft:item,nbt={Item:{tag:{EigChunkS.1Alle:true} } }]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigChunkS.1Alle:true}] run kill @s
 
 # Der aktive Chunk wird wieder entladen.
 forceload remove ~ ~

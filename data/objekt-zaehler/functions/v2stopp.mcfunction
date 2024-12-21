@@ -5,9 +5,8 @@ scoreboard objectives remove PZObjZae.2Ausl
 tag @a[tag=EtiObjZae.2Auswahl] remove EtiObjZae.2Auswahl
 
 # Die Gegenstände die der Spieler bekommen hatte, werden aus dem Inventar wieder entfernt.
-clear @a minecraft:stick{EigObjZae.2Alle:true}
-clear @a minecraft:piglin_spawn_egg{EigObjZae.2Alle:true}
+clear @a *[minecraft:custom_data~{EigObjZae.2Alle:true}]
 
 # Falls die Gegenstände gedroppt wurde, erhalten sie ein bestimmtes Etikett, das alle Objekte besitzen und diese werden entfernt.
-tag @e[type=minecraft:item,nbt={Item:{tag:{EigObjZae.2Alle:true} } }] add EtiObjZae.2Alle
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigObjZae.2Alle:true}] run kill @s
 kill @e[tag=EtiObjZae.2Alle]

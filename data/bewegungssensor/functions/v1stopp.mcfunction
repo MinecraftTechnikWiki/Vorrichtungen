@@ -6,10 +6,9 @@ scoreboard objectives remove PZBewS.1Sprint
 scoreboard objectives remove PZBewS.1Schl
 scoreboard objectives remove PZBewS.1Sprung
 
-# Der Stock wird wieder aus dem Inventar und auf dem Boden gelöscht.
-clear @a minecraft:stick{EigBewS.1Alle:true}
-kill @e[type=minecraft:item,nbt={Item:{id:"minecraft:stick",tag:{EigBewS.1Alle:true} } }]
+# Das Etikett wird entfernt, falls es noch vorhanden war.
+tag @a[tag=EtiBewS.1Auswahl] remove EtiBewS.1Auswahl
 
-# Die Etiketten werden entfernt, falls sie noch vorhanden sind.
-tag @a[tag=EtiBewS.1Titel] remove EtiBewS.1Titel
-tag @a[tag=EtiBewS.1Bewegung] remove EtiBewS.1Bewegung
+# Der Stock wird wieder aus dem Inventar und auf dem Boden gelöscht.
+clear @a minecraft:stick[minecraft:custom_data~{EigBewS.1Alle:true}]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigBewS.1Alle:true}] run kill @s

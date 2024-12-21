@@ -1,0 +1,68 @@
+{
+  "criteria": {
+    "Werfer": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:dispenser"
+          }
+        ]
+      }
+    },
+    "Truhe": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:chest"
+          }
+        ]
+      }
+    },
+    "Ofen": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:furnace"
+          }
+        ]
+      }
+    },
+    "Fass": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:barrel"
+          }
+        ]
+      }
+    },
+    "Shulker-Kiste": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:block_state_property",
+            "block": "minecraft:shulker_box"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "Werfer",
+      "Truhe",
+      "Ofen",
+      "Fass",
+      "Shulker-Kiste"
+    ]
+  ]
+}

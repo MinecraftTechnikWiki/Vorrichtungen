@@ -1,4 +1,4 @@
-# Bei jeglischer Form der Bewegung erhält der Spieler das gleiche Etikett zur Markierung.
+# Bei jeglicher Form der Bewegung erhält der Spieler das gleiche Etikett zur Markierung.
 tag @s[scores={PZBewS.1Gehen=1..}] add EtiBewS.1Bewegung
 tag @s[scores={PZBewS.1Plansch=1..}] add EtiBewS.1Bewegung
 tag @s[scores={PZBewS.1Schwim=1..}] add EtiBewS.1Bewegung

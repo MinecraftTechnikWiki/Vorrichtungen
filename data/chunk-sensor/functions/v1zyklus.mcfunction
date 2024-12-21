@@ -1,5 +1,5 @@
 # Wenn der Spieler den Kompass ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigChunkS.1Sensor:true} } }] add EtiChunkS.1Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigChunkS.1Sensor:true}] run tag @s add EtiChunkS.1Ausgewaehlt
 
 # Spieler die das Etikett besitzen laden von sich aus die Sensor-Funktion.
 execute as @a[tag=EtiChunkS.1Ausgewaehlt] at @s run function chunk-sensor:v1sensor

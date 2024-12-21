@@ -4,7 +4,7 @@ scoreboard players set @s PZKugelG.1Vert 0
 tag @s remove EtiKugelG.1Erstellen
 teleport @s ~ ~10 ~
 
-# Es werden sieben Kugel-Rüstungsständer erzeugt, die beim Generieren der Kugel den richtigen Abstand messen.
+# Es werden sieben Befehlsblöcke in einer Reihe platziert. Diese erzeugen sieben Kugel-Markierer, die beim Generieren der Kugel den richtigen Abstand von sich zum Mittelpunkt messen. Eine zweite Reihe an Ketten-Befehlsblöcken werden darüber platziert, die nach dem Auslösen der Befehlsblöcke alle Befehlsblöcke und einschließlich sich selber wieder entfernen.
 execute at @s positioned ~3 ~-3 ~ run fill ~ ~ ~3 ~ ~ ~-3 minecraft:command_block[facing=up]{auto:true,Command:'summon minecraft:marker ~ ~ ~ {Tags:["EtiKugelG.1Alle","EtiKugelG.1Kugel"]}'} replace
 execute at @s positioned ~3 ~-2 ~ run fill ~ ~ ~3 ~ ~ ~-3 minecraft:chain_command_block[facing=up]{auto:true,Command:'fill ~ ~-1 ~ ~ ~ ~ minecraft:air replace'} replace
 

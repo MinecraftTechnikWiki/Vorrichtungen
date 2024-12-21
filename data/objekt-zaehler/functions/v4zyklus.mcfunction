@@ -1,5 +1,5 @@
 # Wenn Spieler den Stock ausgewählt haben, erhalten sie ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigObjZae.4Sensor:true} } }] add EtiObjZae.4Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigObjZae.4Sensor:true}] run tag @s add EtiObjZae.4Ausgewaehlt
 
 # Wenn Spieler den Stock gerade erst ausgewählt haben, wird die Sensor-Funktion geladen.
 execute as @a[tag=EtiObjZae.4Ausgewaehlt,tag=!EtiObjZae.4Auswahl] at @s run function objekt-zaehler:v4sensor

@@ -1,5 +1,5 @@
 # Wenn der Spieler den Kompass ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigEntfS.1Sensor:true} } }] add EtiEntfS.1Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigEntfS.1Sensor:true}] run tag @s add EtiEntfS.1Ausgewaehlt
 
 # Spieler die das Etikett besitzen, laden von ihrer Position aus die Sensor-Funktion.
 execute as @a[tag=EtiEntfS.1Ausgewaehlt] at @s run function entfernungs-sensor:v1sensor

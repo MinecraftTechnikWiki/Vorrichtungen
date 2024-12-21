@@ -6,7 +6,7 @@ scoreboard players set VarObjZae.2Min PZObjZae.2Ausl 0
 scoreboard players set VarObjZae.2Max PZObjZae.2Ausl 10
 
 # Spieler im Umkreis von 25 Blöcken erhalten einen Stock mit Verzauberungsschimmer.
-give @a[distance=..25] minecraft:stick{EigObjZae.2Alle:true,EigObjZae.2Sensor:true,Enchantments:[{id:-1}],display:{Name:'{"text":"Objekt-Sensor","color":"dark_purple","bold":true}',Lore:['"Wähle den Stock aus"','"um die Anzahl der Objekte"','"anzuzeigen zu lassen."'] } }
+give @a[distance=..25] minecraft:stick[minecraft:lore=['"Wähle den Stock aus"','"um die Anzahl der Objekte"','"anzuzeigen zu lassen."'],minecraft:custom_name='{"text":"Objekt-Sensor","color":"dark_purple","bold":true}',minecraft:custom_data={EigObjZae.2Alle:true,EigObjZae.2Sensor:true},minecraft:enchantment_glint_override=true]
 
 # Ebenfalls erhalten die Spieler Piglin-Spawn-Eier.
-give @a[distance=..25] minecraft:piglin_spawn_egg{EigObjZae.2Alle:true,display:{Lore:['"Eine Kreatur zum"','"aufzählen"'] },EntityTag:{IsImmuneToZombification:true,Tags:["EtiObjZae.2Alle","EtiObjZae.2Objekt"],ArmorItems:[{},{},{},{id:"minecraft:leather_helmet",Count:1b}],DeathLootTable:"minecraft:empty"} } 16
+give @a[distance=..25] minecraft:piglin_spawn_egg[minecraft:entity_data={ArmorItems:[{},{},{},{count:1,id:"minecraft:leather_helmet"}],DeathLootTable:"minecraft:empty",IsImmuneToZombification:true,Tags:["EtiObjZae.2Alle","EtiObjZae.2Objekt"],id:"minecraft:piglin"},minecraft:lore=['"Eine Kreatur zum"','"aufzählen"'],minecraft:custom_data={EigObjZae.2Alle:true}] 16

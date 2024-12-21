@@ -1,5 +1,5 @@
 # Spieler die den Stock ausgewählt haben, erhalten ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigDimS.2Sensor:true} } }] add EtiDimS.2Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigDimS.2Sensor:true}] run tag @s add EtiDimS.2Ausgewaehlt
 
 # Je nach dem in welcher Dimension der Spieler ist, wird über der Schnellleiste die entsprechende Dimension angezeigt.
 title @a[tag=EtiDimS.2Ausgewaehlt,advancements={dimensions-sensor:v2ende=true}] actionbar ["",{"text":"Dimension == ","color":"gray","bold":true},{"text":"Ende","color":"blue","bold":true}]

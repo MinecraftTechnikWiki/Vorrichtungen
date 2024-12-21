@@ -9,15 +9,15 @@ tag @a[scores={PZInvS.5Fass=1..}] add EtiInvS.5Block
 tellraw @a[tag=EtiInvS.5Block] ["Inventar-Sensor.5:\n",{"text":"Inventar geöffnet() == ","color":"gray","bold":true},{"text":"wahr","color":"green","bold":true}]
 
 # Damit später auch beim Platzieren von Behältern die Funktion dazu geladen wird, erhalten Spieler ebenfalls das Etikett dafür.
-tag @a[advancements={inventar-sensor:v5bloecke_platzieren=true}] add EtiInvS.5Block
+tag @a[advancements={inventar-sensor:v5behaelter_platziert=true}] add EtiInvS.5Block
 
-# Wenn Spieler das Etikett besitzen, wird von deren Position in Augenhöhe in Blickrichtung die Platzieren-Funktion geladen.
-execute as @a[tag=EtiInvS.5Block] at @s anchored eyes positioned ^ ^ ^0.5 run function inventar-sensor:v5platzieren
+# Wenn Spieler das Etikett besitzen, wird von deren Position in Augenhöhe in Blickrichtung die Sensor-Funktion geladen.
+execute as @a[tag=EtiInvS.5Block] at @s anchored eyes positioned ^ ^ ^0.5 run function inventar-sensor:v5sensor
 
 # Spieler die den Fortschritt besitzen, bekommen ihn entfernt.
-advancement revoke @a[advancements={inventar-sensor:v5bloecke_platzieren=true}] only inventar-sensor:v5bloecke_platzieren
+advancement revoke @a[advancements={inventar-sensor:v5behaelter_platziert=true}] only inventar-sensor:v5behaelter_platziert
 
-# Falls eine Partikelwolke ohne Behälter exisitert, wird sie entfernt.
+# Falls ein Markierer ohne Behälter existiert, wird er entfernt.
 execute as @e[type=minecraft:marker,tag=EtiInvS.5Inventar] at @s unless block ~ ~ ~ #inventar-sensor:v5behaelter run kill @s
 
 # Falls Spieler das Inventar geöffnet haben, wird ihnen der Wert wieder auf null gesetzt.

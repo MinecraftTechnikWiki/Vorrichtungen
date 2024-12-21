@@ -1,4 +1,4 @@
-# Es wird für jede Richtung eine Partikelwolek erzeugt, die genau einen Tick lang existiert.
+# Es wird für jede Richtung eine Partikelwolke erzeugt, die genau einen Tick lang existiert.
 execute positioned ^ ^ ^0.2 unless entity @s[distance=..0.1] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2,Tags:["EtiBewS.p1Alle","EtiBewS.p1Vorwaerts"]}
 execute positioned ^ ^ ^-0.2 unless entity @s[distance=..0.1] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2,Tags:["EtiBewS.p1Alle","EtiBewS.p1Rueckwaerts"]}
 execute positioned ^0.2 ^ ^ unless entity @s[distance=..0.1] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:2,Tags:["EtiBewS.p1Alle","EtiBewS.p1Links"]}

@@ -1,7 +1,7 @@
 # Wenn der Spieler auf dem Boden steht und den Stock ausgewählt hat, erhaält er ein Etikett.
-tag @p[tag=EtiBlockS.4Spieler,nbt={OnGround:true,SelectedItem:{id:"minecraft:stick",tag:{EigBlockS.4Alle:true} } }] add EtiBlockS.4BlockErfassen
+tag @p[tag=EtiBlockS.4Spieler,nbt={OnGround:true,SelectedItem:{id:"minecraft:stick",components:{"minecraft:custom_data":{EigBlockS.4Alle:true} } } }] add EtiBlockS.4BlockErfassen
 
-# Wenn der Spieler den Stock ausgewählt hat, wird die Güterlore geleert um anschließend sie mit dem Block-Gegenstand  zu füllen auf dem der Spieler aktuell steht.
+# Wenn der Spieler den Stock ausgewählt hat, wird die Güterlore geleert um anschließend sie mit dem Block-Gegenstand zu füllen auf dem der Spieler aktuell steht.
 execute if entity @p[tag=EtiBlockS.4BlockErfassen] run data remove entity @e[type=minecraft:chest_minecart,tag=EtiBlockS.4Sensor,sort=nearest,limit=1] Items
 execute at @p[tag=EtiBlockS.4BlockErfassen] run loot replace entity @e[type=minecraft:chest_minecart,tag=EtiBlockS.4Sensor] container.0 mine ~ ~-0.5 ~
 

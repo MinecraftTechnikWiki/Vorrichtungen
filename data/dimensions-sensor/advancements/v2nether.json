@@ -3,9 +3,14 @@
     "requirement": {
       "trigger": "minecraft:location",
       "conditions": {
-        "location": {
-          "dimension": "minecraft:the_nether"
-        }
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "dimension": "minecraft:the_nether"
+            }
+          }
+        ]
       }
     }
   }

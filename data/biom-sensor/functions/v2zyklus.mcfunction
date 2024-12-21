@@ -1,5 +1,5 @@
 # Bei Auswahl des Stockes erhält der Spieler ein temporäres Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigBiomS.2Sensor:true} } }] add EtiBiomS.2Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigBiomS.2Sensor:true}] run tag @s add EtiBiomS.2Ausgewaehlt
 
 # Wenn der Spieler im Biom die Leere ist, erhält er automatisch den Fortschritt dafür und das wird getestet. Nur wenn er diesen hat und den Stock ausgewählt hat, erhält er die Schnellleisten-Nachricht.
 title @a[tag=EtiBiomS.2Ausgewaehlt,advancements={biom-sensor:v2biom_leere=true}] actionbar ["",{"text":"Biom == ","color":"gray","bold":true},{"text":"Die Leere","color":"blue","bold":true}]

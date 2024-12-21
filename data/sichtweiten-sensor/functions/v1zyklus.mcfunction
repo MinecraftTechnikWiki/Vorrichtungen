@@ -1,5 +1,5 @@
 # Wenn der Spieler den Kompass ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigSichtWS.1Sensor:true} } }] add EtiSichtWS.1Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigSichtWS.1Sensor:true}] run tag @s add EtiSichtWS.1Ausgewaehlt
 
 # Die Tick-Variable wird hochgezählt und bei einer Sekunde wird sie wieder auf null gesetzt. Dabei wird dem Spieler jedesmal der wert auch auf null gesetzt, damit dieser in der aufrufenden Sensor-Funktion benutzt werden kann.
 execute if score VarSichtWS.1Tick PZSichtWS.1Wert matches ..19 run scoreboard players add VarSichtWS.1Tick PZSichtWS.1Wert 1

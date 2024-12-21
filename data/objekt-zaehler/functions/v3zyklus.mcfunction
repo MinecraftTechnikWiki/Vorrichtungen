@@ -14,7 +14,7 @@ execute as @e[type=minecraft:armor_stand,tag=EtiObjZae.3Kugel] at @s store resul
 execute as @e[type=minecraft:armor_stand,tag=EtiObjZae.3Kubus] at @s positioned ~-5 ~ ~-5 store result score @s PZObjZae.3Anz if entity @e[dx=10,dy=5,dz=10,tag=!EtiObjZae.3Zone]
 
 # Wenn Spieler den Stock ausgewählt haben, wird ein Etikett vergeben.
-tag @a[nbt={SelectedItem:{tag:{EigObjZae.3Sensor:true} } }] add EtiObjZae.3Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigObjZae.3Sensor:true}] run tag @s add EtiObjZae.3Ausgewaehlt
 
 # Wenn mindestens ein Spieler den Stock ausgewählt hat, wird die Gesamtzahl der Piglins ermittelt.
 execute if entity @p[tag=EtiObjZae.3Ausgewaehlt] store result score VarObjZae.3Anzahl PZObjZae.3Anz if entity @e[type=minecraft:piglin,tag=EtiObjZae.3Objekt]

@@ -9,10 +9,8 @@ team remove TMObjZae.3Team2
 tag @a[tag=EtiObjZae.3Auswahl] remove EtiObjZae.3Auswahl
 
 # Die Gegenstände die im Inventar vorhanden sind, werden entfernt.
-clear @a minecraft:stick{EigObjZae.3Alle:true}
-clear @a minecraft:armor_stand{EigObjZae.3Alle:true}
-clear @a minecraft:piglin_spawn_egg{EigObjZae.3Alle:true}
+clear @a *[minecraft:custom_data~{EigObjZae.3Alle:true}]
 
 # Falls Gegenstände auf den Boden geworfen wurden, werden sie markiert und anschließend werden alle Objekte mit dem Etikett entfernt.
-tag @e[type=minecraft:item,nbt={Item:{tag:{EigObjZae.3Alle:true} } }] add EtiObjZae.3Alle
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigObjZae.3Alle:true}] run kill @s
 kill @e[tag=EtiObjZae.3Alle]

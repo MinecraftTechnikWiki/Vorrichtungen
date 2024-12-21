@@ -1,5 +1,5 @@
 # Wenn der Spieler den Stock ausgewählt hat, erhält er zur Erkennung ein Etikett.
-tag @a[nbt={SelectedItem:{tag:{EigHoehlS.1Sensor:true} } }] add EtiHoehlS.1Ausgewaehlt
+execute as @a if items entity @s weapon.* *[minecraft:custom_data~{EigHoehlS.1Sensor:true}] run tag @s add EtiHoehlS.1Ausgewaehlt
 
 # Jede Sekunde wird bei allen Spielern der Punktestand wieder auf null gesetzt, ebenso die Tick-Variable.
 execute if score VarHoehlS.1Tick PZHoehlS.1Wert matches ..19 run scoreboard players add VarHoehlS.1Tick PZHoehlS.1Wert 1

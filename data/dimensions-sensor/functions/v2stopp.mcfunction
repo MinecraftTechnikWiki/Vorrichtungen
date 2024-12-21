@@ -8,10 +8,10 @@ advancement revoke @a[advancements={dimensions-sensor:v2dimension_geaendert=true
 tag @a[tag=EtiDimS.2Auswahl] remove EtiDimS.2Auswahl
 
 # Der Stock wird wieder entfernt.
-clear @a minecraft:stick{EigDimS.2Alle:true}
+clear @a minecraft:stick[minecraft:custom_data~{EigDimS.2Alle:true}]
 
 # Falls der Stock auf den Boden geworfen wurde, wird auch der Drop entfernt.
-kill @e[type=minecraft:item,nbt={Item:{tag:{EigDimS.2Alle:true} } }]
+execute as @e[type=minecraft:item] if items entity @s contents *[minecraft:custom_data~{EigDimS.2Alle:true}] run kill @s
 
 # Der dauerhaft geladene Chunk wird deaktiviert.
 forceload remove ~ ~

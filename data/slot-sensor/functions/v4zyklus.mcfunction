@@ -1,8 +1,8 @@
 # Nur wenn der Spieler einen Gegenstand in der Schnellleiste ausgewählt hat, bekommt er das Etikett dafür.
 tag @a[distance=..25,nbt={SelectedItem:{} }] add EtiSlotS.4Ausgewaehlt
 
-# Wenn der Spieler das Etikett besitzt, wird von ihm aus die Inventar-Funktion geladen.
-execute as @a[distance=..25,tag=EtiSlotS.4Ausgewaehlt] run function slot-sensor:v4inventar
+# Wenn der Spieler das Etikett besitzt, wird von ihm aus die Sensor-Funktion geladen.
+execute as @a[distance=..25,tag=EtiSlotS.4Ausgewaehlt] run function slot-sensor:v4sensor
 
 # Spieler die etwas ausgewählt haben, bekommen die Anzahl der Slots als Wert in ihren jeweiligen Punktestand. Wenn die Anzahl mindestens bei eins liegt, wird ihnen die Anzahl der belegten Slots als Titel-Nachricht ausgegeben.
 execute as @a[distance=..25,tag=!EtiSlotS.4Ausgewaehlt] store result score @s PZSlotS.4Slots run data get entity @s Inventory

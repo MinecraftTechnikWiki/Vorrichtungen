@@ -7,4 +7,4 @@ scoreboard objectives add PZBewS.1Schl minecraft.custom:minecraft.crouch_one_cm 
 scoreboard objectives add PZBewS.1Sprung minecraft.custom:minecraft.jump ["Bewegungssensor.1: ",{"text":"Springen","bold":true}]
 
 # Dem Spieler wird ein Stock mit Verzauberungsschimmer gegeben, um das Erfassen der Bewegung zu ermöglichen.
-give @a[distance=..15] minecraft:stick{EigBewS.1Alle:true,EigBewS.1Sensor:true,Enchantments:[{id:-1}],display:{Name:'{"text":"Bewegungssensor","color":"dark_purple","bold":true}',Lore:['"Wähle den Stock aus"','"um nach der Bewegung"','"zu testen."'] } }
+give @a[distance=..15] minecraft:stick[minecraft:lore=['"Wähle den Stock aus"','"um nach der Bewegung"','"zu testen."'],minecraft:custom_name='{"text":"Bewegungssensor","color":"dark_purple","bold":true}',minecraft:custom_data={EigBewS.1Alle:true,EigBewS.1Sensor:true},minecraft:enchantment_glint_override=true]
