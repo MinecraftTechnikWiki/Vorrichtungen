@@ -24,7 +24,7 @@ jobs:
           do
             [[ "$namespace" == "minecraft" ]] && continue
             echo ::group::Building namespace \'$namespace\'
-            zip -rv "../output/${{ github.event.repository.name }}-$namespace.zip" . -i pack.mcmeta "data/$namespace/*" "data/minecraft/*"
+            zip -rv "../output/${{ github.event.repository.name }}-${{ github.ref_name }}@$namespace.zip" . -i pack.mcmeta "data/$namespace/*" "data/minecraft/*"
             echo ::endgroup::
           done
           namespacesCount=$(ls -q ../output | wc -l)
@@ -36,7 +36,7 @@ jobs:
           fi
           
           echo ::group::Building main pack
-          zip -rv "../output/${{ github.event.repository.name }}.zip" . -i pack.mcmeta "data/*"
+          zip -rv "../output/${{ github.event.repository.name }}-${{ github.ref_name }}.zip" . -i pack.mcmeta "data/*"
           echo ::endgroup::
           cd ..
 
