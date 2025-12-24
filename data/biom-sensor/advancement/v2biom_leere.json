@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "Biom": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "biomes": "minecraft:the_void"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
